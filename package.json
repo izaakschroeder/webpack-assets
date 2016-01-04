@@ -6,12 +6,15 @@
   "scripts": {
     "lint": "./node_modules/.bin/eslint --ignore-path .gitignore .",
     "prepublish": "./node_modules/.bin/babel -d dist src/",
-    "test": "npm run lint"
+    "spec": "NODE_ENV=test ./node_modules/.bin/_mocha --recursive --compilers js:babel-core/register -R spec test/spec",
+    "test": "npm run lint && npm run spec"
   },
   "devDependencies": {
+    "babel-cli": "^6.3.17",
+    "babel-preset-metalab": "^0.1.1",
+    "chai": "^3.4.1",
     "eslint": "^1.8.0",
     "eslint-config-metalab": "^0.3.0",
-    "babel-cli": "^6.3.17",
-    "babel-preset-metalab": "^0.1.1"
+    "mocha": "^2.3.4"
   }
 }
