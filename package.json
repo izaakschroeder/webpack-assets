@@ -17,5 +17,8 @@
     "eslint": "^1.8.0",
     "eslint-config-metalab": "^0.3.0",
     "mocha": "^2.3.4"
+  },
+  "dependencies": {
+    "mime-types": "^2.1.9"
   }
 }
