@@ -6,10 +6,13 @@
   "scripts": {
     "lint": "./node_modules/.bin/eslint --ignore-path .gitignore .",
     "prepublish": "./node_modules/.bin/babel -d dist src/",
-    "spec": "NODE_ENV=test ./node_modules/.bin/_mocha --recursive --compilers js:babel-core/register -R spec test/spec",
+    "spec": "NODE_ENV=test ./node_modules/.bin/_mocha -r adana-dump --recursive --compilers js:babel-core/register -R spec test/spec",
     "test": "npm run lint && npm run spec"
   },
   "devDependencies": {
+    "adana-cli": "^0.1.1",
+    "adana-dump": "^0.1.0",
+    "adana-format-lcov": "^0.1.1",
     "babel-cli": "^6.3.17",
     "babel-core": "^6.4.5",
     "babel-preset-metalab": "^0.1.1",
