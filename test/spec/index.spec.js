@@ -61,3 +61,16 @@ it('should generate `hash`', () => {
   expect(assets).to.have.length(1);
   expect(assets[0]).to.have.property('hash', '123abc');
 });
+
+it('should generate `name`', () => {
+  const assets = collect({
+    publicPath: '/foo/',
+    chunks: [ {
+      id: 5,
+      files: [ '/foo/bar.js' ],
+    } ],
+  });
+  expect(assets).to.be.an.instanceof(Array);
+  expect(assets).to.have.length(1);
+  expect(assets[0]).to.have.property('name', 'bar.js');
+});
