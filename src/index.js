@@ -11,14 +11,7 @@ function ensureRelative(path) {
 function contentType(asset) {
   return {
     ...asset,
-    contentType: lookup(asset.file),
-  };
-}
-
-function file(asset) {
-  return {
-    ...asset,
-    file: asset.name,
+    contentType: lookup(asset.name),
   };
 }
 
@@ -26,7 +19,7 @@ function url(asset, { publicPath }) {
   const base = ensureDirectory(publicPath);
   return {
     ...asset,
-    url: base + ensureRelative(asset.file),
+    url: base + ensureRelative(asset.name),
   };
 }
 
@@ -38,7 +31,6 @@ function hash(asset, stats) {
 }
 
 const props = [
-  file,
   url,
   contentType,
   hash,
